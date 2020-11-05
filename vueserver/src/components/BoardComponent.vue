@@ -24,8 +24,6 @@ export default {
     };
   },
   mounted() {
-
-    
     axios.get("/test").then((res) => {
       console.log(res);
       this.list = res.data;
@@ -36,7 +34,7 @@ export default {
     send() {
       axios.post("/data", { title: this.title }).then((res) => {
         //포스트 전송이 완료된 후 작업을 해주면 된다.
-        console.log("전송 완료");
+        this.list = res.data;
       });
     },
   },

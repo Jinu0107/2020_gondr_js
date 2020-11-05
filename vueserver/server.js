@@ -28,8 +28,10 @@ app.get('/test', async (req, res) => {
 
 app.post('/data', async (req, res) => {
     //req.body.key
-    log(req.body.title);
-    await pool.query("INSERT ")
+    let title = req.body.title;
+    await pool.query("INSERT INTO `dummy`(`id`, `title`) VALUES (null , ?)", [title]);
+    let r = await pool.query("SELECT * FROM dummy");
+    res.json(r[0]);
 });
 
 server.listen(54000, () => {
