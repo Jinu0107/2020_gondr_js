@@ -1,4 +1,4 @@
-# DB/Credential.js
+## DB/Credential.js
 
 ``` JS
 const credential = {
