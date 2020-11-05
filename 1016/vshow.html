@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .list-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .list-enter-active,
+        .list-leave-active {
+            transition: all 1s;
+        }
+
+        .list-enter,
+        .list-leave-to {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="add">삽입하기</button>
+        <transition-group name="list" tag="div">
+            <div v-for="item in list" :key="item.id">
+                {{item.name}} <button @click="deleteItem(item.id)">삭제하기</button>
+            </div>
+        </transition-group>
+
+    </div>
+
+    <script>
+        const log = console.log;
+        new Vue({
+            el: "#app",
+            data: {
+                list: [{
+                        id: 1,
+                        name: '안진우',
+                        age: 18
+                    },
+                    {
+                        id: 2,
+                        name: '박진우',
+                        age: 20
+                    },
+                    {
+                        id: 3,
+                        name: '맞지누',
+                        age: 132
+                    },
+                    {
+                        id: 4,
+                        name: '김진우',
+                        age: 23
+                    },
+                    {
+                        id: 5,
+                        name: '감자',
+                        age: 24
+                    },
+                    {
+                        id: 6,
+                        name: '고추',
+                        age: 26
+                    },
+                    {
+                        id: 7,
+                        name: '고구바',
+                        age: 233
+                    },
+                    {
+                        id: 8,
+                        name: '양배추',
+                        age: 2
+                    },
+
+                ],
+                numList: [1, 2, 3, 4, 5]
+            },
+
+            methods: {
+                add() {
+                    this.list.push({
+                        id: this.maxId,
+                        name: "안진우" + this.maxId,
+                        age: 50
+                    });
+                },
+                deleteItem(idx) {
+                    this.list = this.list.filter(x => x.id !== idx);
+                }
+            },
+            computed: {
+                maxId() {
+                    return Math.max(...this.list.map(x => x.id)) + 1;
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

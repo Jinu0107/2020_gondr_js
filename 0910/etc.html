@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const log = console.log;
+        let name = "안진우";
+        let age = 18;
+        // let div = document.createElement("div");
+        // let text = `내이름은 ${name} 이고 나이는 ${age} 입니다.`;
+        // div.innerHTML = text;
+        // document.body.appendChild(div);
+
+        function makeTemplate({id, title, content}) {
+            return `<div class="item" data-id="${id}">
+                         <h4 class="title">${title}</h4>
+                         <span class="msg">${content}</span>
+                     </div>`
+        }
+
+        let list = [
+            {    id: 4, title: "제목입니다.", content: "내용입니다1"},
+            {    id: 5, title: "제목입니다.", content: "내용입니다2"},
+            {    id: 6, title: "제목입니다.", content: "내용입니다3"},
+            {    id: 7, title: "제목입니다.", content: "내용입니다4"},
+            {    id: 8, title: "제목입니다.", content: "내용입니다5"},
+        ]
+
+        let tmpList = list.map(x => makeTemplate(x)).join('');
+        log(tmpList);
+    </script>
+</body>
+
+</html>
