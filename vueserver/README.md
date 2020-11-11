@@ -8,6 +8,8 @@ const credential = {
     password: '???'
 }
 
+const session_secret = "???";
 
 module.exports.c = credential;
+module.exports.ss = session_secret;
 ```
