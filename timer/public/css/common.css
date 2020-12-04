@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('/font/Oswald-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'DS';
+    src: url('/font/DS-DIGI.TTF');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
