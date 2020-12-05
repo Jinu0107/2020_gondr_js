@@ -75,6 +75,7 @@ export default {
       }
     },
     record() {
+      toastr.success("성공적으로 기록되었습니다. ", "성공!", { timeOut: 3000 });
       let idx = this.recordIdx;
       let value = `${this.hour
         .toString()

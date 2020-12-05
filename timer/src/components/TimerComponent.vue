@@ -54,7 +54,6 @@ export default {
       );
     },
     getDateStringFormat(y, mu, d, h, m, s) {
-      log(h, m, s);
       return `${y}-${mu}-${d} ${h
         .toString()
         .padStart(2, "0")}:${m
@@ -63,7 +62,7 @@ export default {
     },
     timeElapsedHandler() {
       setTimeout(() => {
-        alert("알람 띠리링~");
+        alert("띠리리리리ㅣ리리링");
       }, 1000);
     },
   },

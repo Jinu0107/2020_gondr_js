@@ -4,6 +4,7 @@ import Router from 'vue-router'
 
 import TimerComponent from '@/components/TimerComponent';
 import StopWatchComponent from '@/components/StopWatchComponent';
+import AlarmComponent from '@/components/AlarmComponent';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -39,6 +40,11 @@ const router = new Router({
       path: '/stopWatch',
       name: 'stopWatch-page',
       component: StopWatchComponent
+    },
+    {
+      path: '/alarm',
+      name: 'alarm-page',
+      component: AlarmComponent
     },
   ]
 })
