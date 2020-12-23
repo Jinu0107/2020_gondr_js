@@ -27,7 +27,7 @@ request(url, (err, res, body) => {
     log("격리중 누적 : " + isolation_total);
     log("격리중 전일대비 : " + isolation_subtotal);
     log("사망 누적 : " + die_total);
-    log("사망 전일대비 : " + die_total);
+    log("사망 전일대비 : " + die_subtotal);
 
 });
 
