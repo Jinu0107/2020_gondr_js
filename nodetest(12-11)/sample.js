@@ -1,14 +1,16 @@
-const data = {
-    name: '정재성',
-    age: 40
-};
-function jaesung(a, b) {
-    return a + b;
+function getCovidData() {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            res("Hello World");
+        }, 3000);
+    });
+
 }
 
-module.exports = {
-    jae: jaesung,
-    data: data
-}
+let data = getCovidData();
+data.then((data) => {
+    console.log(data);
+});
+
 
 
