@@ -22,21 +22,18 @@ function getData() {
             let covid = $(".inner_value").eq(0).html().toNumber();
             let covid_d = $(".inner_value").eq(1).html().toNumber();
             let covid_o = $(".inner_value").eq(2).html().toNumber();
-            let freeCnt = $(".ca_value").eq(2).html().toNumber();
-            let freeCnt_compare = $(".txt_ntc").eq(0).html().toNumber();
-            let inPrison = $(".ca_value").eq(4).html().toNumber();
-            let inPrison_compare = $(".txt_ntc").eq(1).html().toNumber();
+            let freecnt = $(".ca_value").eq(2).html().toNumber();
+            let freecnt_compare = $(".txt_ntc").eq(0).html().toNumber();
+            let inprison = $(".ca_value").eq(4).html().toNumber();
+            let inprison_compare = $(".txt_ntc").eq(1).html().toNumber();
             let death = $(".ca_value").eq(6).html().toNumber();
             let death_compare = $(".txt_ntc").eq(2).html().toNumber();
             let base_date = $("#content > div > h5:nth-child(4) > span").html().toDate(new Date);
-            let data = { total, covid, covid_d, covid_o, freeCnt, freeCnt_compare, inPrison, inPrison_compare, death, death_compare, base_date };
+            let data = { base_date, total, covid, covid_d, covid_o, freecnt, freecnt_compare, inprison, inprison_compare, death, death_compare };
             resolve(data);
         });
     });
 }
-getData().then((data) => {
-    log(data);
-});
 
 
 module.exports.getCovidData = getData;
